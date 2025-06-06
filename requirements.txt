@@ -6,4 +6,5 @@ tensorflow>=2.10.0
 stable-baselines3
 gym
 flask
+flask_cors
 gunicorn
