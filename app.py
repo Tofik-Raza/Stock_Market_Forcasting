@@ -18,7 +18,8 @@ ORIGINAL_CSV        = "original_df.csv"
 DATA_NPY            = "data.npy"
 SEQ_LEN             = 60
 # 1) Load LSTM & scaler
-lstm = tf.keras.models.load_model(MODEL_LSTM_PATH)
+lstm = tf.keras.models.load_model(MODEL_LSTM_PATH, compile=False)
+
 with open(SCALER_PATH, "rb") as f:
     scaler = pickle.load(f)
 # 2) Load RL policy
