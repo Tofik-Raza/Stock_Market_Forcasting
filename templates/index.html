@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trading Bot Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📈 Stock Trading Bot Dashboard</h1>
+      <p>Hybrid LSTM + Reinforcement Learning</p>
+    </header>
+
+    <main>
+      <button id="getSignalBtn">Get Trading Signal</button>
+      <div id="result" class="badge">—</div>
+    </main>
+
+    <footer>
+      <small>Developed with FastAPI &amp; Stable-Baselines3</small>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("getSignalBtn").addEventListener("click", async () => {
+      const btn = document.getElementById("getSignalBtn");
+      btn.disabled = true;
+      btn.textContent = "Loading…";
+      try {
+        const resp = await fetch("/predict");
+        const data = await resp.json();
+        const badge = document.getElementById("result");
+        badge.textContent = data.action.toUpperCase();
+        badge.className = `badge ${data.action}`; 
+      } catch (err) {
+        console.error(err);
+        document.getElementById("result").textContent = "Error";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Get Trading Signal";
+      }
+    });
+  </script>
+</body>
+</html>

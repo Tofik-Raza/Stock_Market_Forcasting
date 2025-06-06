@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Center everything */
+body {
+  background: #f6f9fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header */
+header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #2b475e;
+}
+
+header p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+#getSignalBtn {
+  background: #2b475e;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#getSignalBtn:hover:not(:disabled) {
+  background: #1f364b;
+}
+
+#getSignalBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Result badge */
+.badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #fff;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Badge colors */
+.badge.hold {
+  background: #888;
+}
+
+.badge.buy {
+  background: #27ae60;
+}
+
+.badge.sell {
+  background: #c0392b;
+}
+
+/* Footer */
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #999;
+}
