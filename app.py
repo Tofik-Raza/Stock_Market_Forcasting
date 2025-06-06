@@ -6,6 +6,8 @@ from flask import Flask, render_template, jsonify
 from stable_baselines3 import PPO
 from trading_env import TradingEnv
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
@@ -62,4 +64,5 @@ def predict():
 # Run App
 # ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # fallback to 10000 locally
+    app.run(host="0.0.0.0", port=port)
