@@ -1,7 +1,6 @@
 pandas
 numpy
 yfinance
-scikit-learn
 tensorflow
 stable-baselines3
 gym
