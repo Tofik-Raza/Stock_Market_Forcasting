@@ -5,10 +5,7 @@ import tensorflow as tf
 from flask import Flask, render_template, jsonify
 from flask_cors import cross_origin
 from stable_baselines3 import PPO
-from trading_env import TradingEnv
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 # CONFIGURATION
 MODEL_LSTM_PATH     = "lstm.h5"
