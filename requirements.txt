@@ -2,7 +2,7 @@ pandas
 numpy
 yfinance
 scikit-learn
-tensorflow>=2.10.0
+tensorflow=2.10.0
 stable-baselines3
 gym
 flask
